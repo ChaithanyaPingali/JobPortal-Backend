@@ -13,15 +13,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/companies")
 @RequiredArgsConstructor
-//@CrossOrigin(origins = {"http://localhost:5173"})
 public class CompanyController {
 
     private final ICompanyService companyService;
-
-//    @Autowired // Optional
-//    public CompanyController(ICompanyService companyService) {
-//        this.companyService = companyService;
-//    }
 
     @GetMapping(version = "1.0")
     public ResponseEntity<List<CompanyDto>> getAllCompanies() {

@@ -64,20 +64,20 @@ INSERT INTO companies (name, logo, industry, size, rating, locations, founded, d
 INSERT INTO jobs (title, company_id, location, work_type, job_type, category, experience_level,
                   salary_min, salary_max, salary_currency, salary_period, description, requirements, benefits,
                   posted_date, application_deadline, applications_count, featured, urgent, remote, status, created_by)
-VALUES ('Product Designer', 30, 'Nashville, TN', 'On-site', 'Part-time',
-        'Design', 'Executive Level', 181000, 310000, 'USD', 'year', 'Join our design team as a Product Designer! You''ll work on user-centered design solutions, conduct user research, and create beautiful interfaces that delight our customers.',
-        '["Figma", "After Effects", "UI/UX Design", "Prototyping", "Photoshop"]', '["Dental Insurance", "Bonus Opportunities", "Health Insurance", "Transportation Benefits", "Conference Attendance", "Professional Development", "Parental Leave", "401(k)", "Disability Insurance", "Remote Work", "Paid Time Off", "Flexible Schedule"]', '2025-10-20 03:27:59',
-        '2025-11-02 11:27:59', 290, 0, 0,
-        0, 'ACTIVE', 'SYSTEM');
-
-INSERT INTO jobs (title, company_id, location, work_type, job_type, category, experience_level,
-                  salary_min, salary_max, salary_currency, salary_period, description, requirements, benefits,
-                  posted_date, application_deadline, applications_count, featured, urgent, remote, status, created_by)
 VALUES ('Design System Lead', 19, 'Remote', 'Hybrid', 'Full-time',
         'Design', 'Entry Level', 52000, 88000, 'USD', 'year', 'Join our design team as a Design System Lead! You''ll work on user-centered design solutions, conduct user research, and create beautiful interfaces that delight our customers.',
         '["Adobe XD", "UI/UX Design", "Wireframing", "Photoshop", "Design Systems", "Figma", "Illustrator"]', '["Paid Time Off", "Free Meals", "Home Office Stipend", "Disability Insurance", "Wellness Programs", "Stock Options", "Dental Insurance", "Education Assistance"]', '2025-10-05 19:27:59',
         '2025-12-21 11:27:59', 143, 1, 1,
         1, 'ACTIVE', 'SYSTEM');
+
+INSERT INTO jobs (title, company_id, location, work_type, job_type, category, experience_level,
+                  salary_min, salary_max, salary_currency, salary_period, description, requirements, benefits,
+                  posted_date, application_deadline, applications_count, featured, urgent, remote, status, created_by)
+VALUES ('Product Designer', 30, 'Nashville, TN', 'On-site', 'Part-time',
+        'Design', 'Executive Level', 181000, 310000, 'USD', 'year', 'Join our design team as a Product Designer! You''ll work on user-centered design solutions, conduct user research, and create beautiful interfaces that delight our customers.',
+        '["Figma", "After Effects", "UI/UX Design", "Prototyping", "Photoshop"]', '["Dental Insurance", "Bonus Opportunities", "Health Insurance", "Transportation Benefits", "Conference Attendance", "Professional Development", "Parental Leave", "401(k)", "Disability Insurance", "Remote Work", "Paid Time Off", "Flexible Schedule"]', '2025-10-20 03:27:59',
+        '2025-11-02 11:27:59', 290, 0, 0,
+        0, 'ACTIVE', 'SYSTEM');
 
 INSERT INTO jobs (title, company_id, location, work_type, job_type, category, experience_level,
                   salary_min, salary_max, salary_currency, salary_period, description, requirements, benefits,

@@ -1,6 +1,24 @@
 target/
-*.log
-*.class
-*.jar
+build/
+.gradle/
+bin/
+dependency-reduced-pom.xml
 .idea/
-.vscode/
+*.iws
+*.iml
+*.ipr
+out/
+
+# --- Logs and Temporary Files ---
+log/
+*.log
+tmp/
+*.tmp
+
+# --- Environment & Secrets ---
+.env
+.env.local
+application-*.properties
+application-*.yml
+!application.properties
+!application.yml

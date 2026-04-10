@@ -204,7 +204,7 @@ public class UserServiceImpl implements IUserService {
         // Increment applications count
         job.setApplicationsCount(job.getApplicationsCount() != null ? job.getApplicationsCount() + 1 : 1);
         // jobRepository.save(job); - Optional
-        return mapToJobApplicationDto(saved);
+        return ApplicationUtility.mapToJobApplicationDto(saved);
     }
 
     @Transactional
@@ -233,46 +233,9 @@ public class UserServiceImpl implements IUserService {
         // Validate if user exists
         JobPortalUser user = userRepository.findJobPortalUserByEmail(userEmail)
                 .orElseThrow(() -> new RuntimeException("User not found with email: " + userEmail));
-        return user.getJobApplications().stream().map(this::mapToJobApplicationDto)
+        return user.getJobApplications().stream().map(jobApp ->
+                        ApplicationUtility.mapToJobApplicationDto(jobApp))
                 .collect(Collectors.toList());
-    }
-
-    private JobApplicationDto mapToJobApplicationDto(JobApplication application) {
-        // Map profile if exists
-        ProfileDto profileDto = null;
-        Profile profile = application.getUser().getProfile();
-        if (profile != null) {
-            profileDto = new ProfileDto(
-                    profile.getId(),
-                    profile.getUser().getId(),
-                    profile.getJobTitle(),
-                    profile.getLocation(),
-                    profile.getExperienceLevel(),
-                    profile.getProfessionalBio(),
-                    profile.getPortfolioWebsite(),
-                    profile.getProfilePicture(),
-                    profile.getProfilePictureName(),
-                    profile.getProfilePictureType(),
-                    profile.getResume(),
-                    profile.getResumeName(),
-                    profile.getResumeType(),
-                    profile.getCreatedAt(),
-                    profile.getUpdatedAt()
-            );
-        }
-        return new JobApplicationDto(
-                application.getId(),
-                application.getUser().getId(),
-                application.getUser().getName(),
-                application.getUser().getEmail(),
-                application.getUser().getMobileNumber(),
-                profileDto,
-                ApplicationUtility.transformJobToDto(application.getJob()),
-                application.getAppliedAt(),
-                application.getStatus(),
-                application.getCoverLetter(),
-                application.getNotes()
-        );
     }
 
     private Profile mapToProfile(Profile profile, ProfileDto profileDto,
@@ -324,6 +287,7 @@ public class UserServiceImpl implements IUserService {
         }
         return dto;
     }
+
     private UserDto mapToUserDto(JobPortalUser user) {
         UserDto dto = new UserDto();
         BeanUtils.copyProperties(user, dto);
